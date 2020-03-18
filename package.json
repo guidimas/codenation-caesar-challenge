@@ -1,0 +1,12 @@
+{
+  "name": "codenation-cesar-challenge",
+  "version": "1.0.0",
+  "description": "Codenation Cesar Challenge",
+  "main": "app.js",
+  "author": "Guilherme Dimas da Rosa <guilhermedimasrosa@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
