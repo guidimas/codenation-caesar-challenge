@@ -3,3 +3,9 @@ node_modules
 
 # Yarn lock
 yarn.lock
+
+# .ENV
+.env
+
+# Answer JSON
+answer.json
