@@ -26,23 +26,21 @@ const decryptCaesar = (shift, encrypted, alphabet) => {
                   .join('');
 }
 
+const saveToDisk = answer => {
+  fs.writeFile('answer.json', JSON.stringify(answer), error => {
+    if (error) return console.error(error);
+  });
+}
+
 const start = async () => {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
   const { data: challengeData } = await getChallengeData();
 
   if (challengeData) {
-    const { numero_casas: shift, cifrado: encrypted } = challengeData;
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    const decrypted = decryptCaesar(shift, encrypted, alphabet);
-
-    const final = challengeData;
-    final.decifrado = decrypted;
-    final.resumo_criptografico = sha1(decrypted);
-
-    console.log(final);
-
-    fs.writeFileSync('answer.json', JSON.stringify(final), error => {
-      console.error(error);
-    });
+    let answer = {...challengeData};
+    answer.decifrado = decryptCaesar(answer.numero_casas, answer.cifrado, alphabet);
+    answer.resumo_criptografico = sha1(answer.decifrado);
+    saveToDisk(answer);
   } else {
     console.error("Whoops! Something went wrong.");
   }
