@@ -1,8 +1,9 @@
 {
-  "name": "codenation-cesar-challenge",
+  "name": "codenation-caesar-challenge",
   "version": "1.0.0",
-  "description": "Codenation Cesar Challenge",
+  "description": "Codenation Caesar challenge.",
   "main": "app.js",
+  "repository": "https://github.com/guidimas/codenation-caesar-challenge",
   "author": "Guilherme Dimas da Rosa <guilhermedimasrosa@gmail.com>",
   "license": "MIT",
   "private": true,
