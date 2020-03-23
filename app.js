@@ -7,9 +7,13 @@ require('dotenv/config');
 
 app.set('view engine', 'pug');
 
-app.get('/', (req, res) => {
-  caesar.generateAnswer();
-  res.render('index', { token: process.env.CODENATION_TOKEN });
+const generateAnswerMiddleware = async (req, res, next) => {
+  req.response = await caesar.generateAnswer();
+  next();
+}
+
+app.get('/', generateAnswerMiddleware, (req, res) => {
+  res.render('index', { token: process.env.CODENATION_TOKEN, response: req.response });
 });
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))

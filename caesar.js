@@ -41,9 +41,9 @@ module.exports = {
       answer.decifrado = decryptCaesar(answer.numero_casas, answer.cifrado, alphabet);
       answer.resumo_criptografico = sha1(answer.decifrado);
       saveToDisk(answer);
-      console.log('Answer file generated.');
+      return 'Answer file generated.';
     } else {
-      console.error("Whoops! Something went wrong.");
+      return 'Whoops! Something is not quite right.';
     }
   }
 };

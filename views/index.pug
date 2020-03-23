@@ -21,8 +21,14 @@ html
       h1 {
         font-size: 30px;
         letter-spacing: 2px;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         text-transform: uppercase;
+      }
+
+      p {
+        background: #ffffff;
+        color: #212133;
+        padding: 1px 8px;
       }
 
       form {
@@ -30,6 +36,7 @@ html
         box-shadow: 0 0 8px 0 #7800ff;
         display: flex;
         flex-direction: column;
+        margin-top: 15px;
         padding: 25px;
       }
 
@@ -67,6 +74,7 @@ html
       }
   body
     h1 Submit Answer
+    p= response
     form(method='POST' enctype='multipart/form-data' action=`https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=${token}`)
       label(for='answer') Answer file:
       input(type='file' name='answer' id='answer')
