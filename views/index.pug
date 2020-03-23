@@ -1,0 +1,11 @@
+html
+  head
+    title Codenation Caesar Challenge
+
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap')
+  body
+    h1 Submit Answer
+    form(method='POST' enctype='multipart/form-data' action=`https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=${token}`)
+      label(for='answer') Answer file:
+      input(type='file' name='answer' id='answer')
+      button(type='submit') Send!
