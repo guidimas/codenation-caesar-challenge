@@ -1,11 +1,73 @@
 html
   head
     title Codenation Caesar Challenge
-
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap')
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        align-items: center;
+        background: #212133;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        font: 16px 'Source Code Pro', monospace;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 30px;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+      }
+
+      form {
+        background: #7800ff;
+        box-shadow: 0 0 8px 0 #7800ff;
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+      }
+
+      form label {
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      form button {
+        background-color: transparent;
+        border: 1px solid #ffffff;
+        border-radius: 3px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 15px;
+        margin-top: 15px;
+        padding: 15px 0;
+        text-transform: uppercase;
+        transition: all .15s linear;
+      }
+
+      form button:after {
+        content: '\00bb';
+        display: inline-block;
+        margin-left: 5px;
+        transition: margin .15s linear;
+      }
+
+      form button:hover {
+        background-color: #7955ff;
+      }
+
+      form button:hover:after {
+        margin: 0 -3px 0 8px;
+      }
   body
     h1 Submit Answer
     form(method='POST' enctype='multipart/form-data' action=`https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=${token}`)
       label(for='answer') Answer file:
       input(type='file' name='answer' id='answer')
-      button(type='submit') Send!
+      button(type='submit') Send
